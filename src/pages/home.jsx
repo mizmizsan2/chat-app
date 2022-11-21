@@ -4,8 +4,6 @@ import {
   Navbar,
   NavTitle,
   NavTitleLarge,
-  Link,
-  Toolbar,
   Block,
   Input,
   Button,
