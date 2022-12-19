@@ -5,7 +5,7 @@ import {
     CardFooter,
 } from 'framework7-react';
 
-const MemoItem = (props) => {
+const ChatItem = (props) => {
     let d = props.date
     let inputDate = `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
 
@@ -16,4 +16,4 @@ const MemoItem = (props) => {
         </Card>
     );
 }
-export default MemoItem;
+export default ChatItem;
