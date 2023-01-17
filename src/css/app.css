@@ -5,10 +5,82 @@
 
 /* Your app custom styles here */
 
+header{
+   position: fixed;
+    left: 0;
+    top: 150px;
+    width: 100%;
+    background: #27ffff;
+}
+
 footer{
    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     background: #007c7c;
+}
+
+
+.right {
+    text-align: right
+}
+
+.my {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px 0 0;
+  padding: 7px 10px;
+  min-width: 1px;
+  max-width: 200px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  background: #e0edff;
+  text-align: left;
+}
+
+.my:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e0edff;
+}
+
+.my p {
+  margin: 0;
+  padding: 0;
+}
+
+.other {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 15px;
+  padding: 7px 10px;
+  min-width: 1px;
+  max-width: 200px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  background: #a1abff;
+}
+
+.other:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #a1abff;
+}
+
+.other p {
+  margin: 0;
+  padding: 0;
+}
+
+.Date {
+    color: rgb(163, 163, 163);
 }

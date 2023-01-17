@@ -1,7 +1,7 @@
 
 import HomePage from '../pages/home.jsx';
 import ChatPage from '../pages/chatPage.jsx';
-import LoginPage from '../pages/login.jsx';
+import NewAcc from '../pages/newAc.jsx';
 
 var routes = [
   {
@@ -13,8 +13,8 @@ var routes = [
     component: ChatPage,
   },
   {
-    path: '/LoginPage',
-    component: LoginPage,
+    path: '/newAccount',
+    component: NewAcc,
   },
 ];
 
