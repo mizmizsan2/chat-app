@@ -7,6 +7,7 @@
 
 header{
    position: fixed;
+   z-index: 2;
     left: 0;
     top: 150px;
     width: 100%;
@@ -15,10 +16,12 @@ header{
 
 footer{
    position: fixed;
+    z-index: 2;
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #007c7c;
+    background: #d2e900;
+    padding: 10px 0px 20px;
 }
 
 
@@ -35,7 +38,7 @@ footer{
   max-width: 200px;
   color: rgb(0, 0, 0);
   font-size: 16px;
-  background: #e0edff;
+  background: #e0f8ff;
   text-align: left;
 }
 
@@ -46,7 +49,7 @@ footer{
   left: 100%;
   margin-top: -15px;
   border: 15px solid transparent;
-  border-left: 15px solid #e0edff;
+  border-left: 15px solid #e0f8ff;
 }
 
 .my p {
@@ -63,7 +66,7 @@ footer{
   max-width: 200px;
   color: rgb(0, 0, 0);
   font-size: 16px;
-  background: #a1abff;
+  background: #00d9ff;
 }
 
 .other:before {
@@ -73,7 +76,7 @@ footer{
   left: -30px;
   margin-top: -15px;
   border: 15px solid transparent;
-  border-right: 15px solid #a1abff;
+  border-right: 15px solid #00d9ff;
 }
 
 .other p {

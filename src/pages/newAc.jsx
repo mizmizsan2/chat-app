@@ -11,11 +11,16 @@ import {
 
 import { collection, addDoc } from "firebase/firestore";  //firestoreのための読み込み
 import { firestore } from '../js/firebase'; //firebase接続のためのプログラム
+import { useCollection } from 'react-firebase-hooks/firestore';
 
 const NewAcc = ({ f7router }) => {
     const [inputName, setInputName] = React.useState("");
     const [inputPass, setInputPass] = React.useState("");
-    
+
+    const [value, loading, error] = useCollection(collection(firestore, 'user-base'),
+        { snapshotListenOptions: { includeMetadataChanges: true } }
+    );
+
     // ここに関数定義を書く
     const addNew = async () => {   //メモの保存ボタンを押したときに実行
 
@@ -23,6 +28,17 @@ const NewAcc = ({ f7router }) => {
             alert('ユーザー名を入力してください！')
             return;
         }
+
+        let docs = [];
+        if (value) {
+            docs = value.docs.slice();
+            let num = docs.findIndex(e => e.data().user == inputName);
+            if (num >= 0) {
+                alert('そのユーザー名は既に存在しています。')
+                return;
+            }
+        }
+
         if (inputPass == '') {  //パスワードが空の時
             alert('パスワードを入力してください！')
             return;
@@ -43,7 +59,7 @@ const NewAcc = ({ f7router }) => {
     }
 
     const backPage = () => {
-       f7router.back(); 
+        f7router.back();
     }
 
 

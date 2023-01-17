@@ -8,15 +8,6 @@ import {
 const ChatItem = (props) => {
     let d = props.date
     let inputDate = `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
-    let myorother;
-
-
-
-    if (props.user == props.myUser) {
-
-    } else {
-
-    }
 
     return (
 
@@ -33,7 +24,7 @@ const ChatItem = (props) => {
                         </div>
 
                         <br />
-                        
+
                         <div className="Date">
                             {inputDate}
                         </div>

@@ -32,6 +32,9 @@ const ChatPage = (props) => {
             text: inputText,
             date: new Date()
         });
+
+        setInputText('');
+        
         console.log("Document written with ID: ", docRef.id);
         
     }
@@ -45,6 +48,7 @@ const ChatPage = (props) => {
         docs = value.docs.slice(); // value.docsのコピーをつくる
         // docsの要素を日付順（逆順）に並び替え
         docs.sort((y, x) => y.data().date.toDate().getTime() - x.data().date.toDate().getTime());
+        
     }
 
     return (
@@ -84,7 +88,7 @@ const ChatPage = (props) => {
                     onChange={(event) => setInputText(event.target.value)}
                 />
 
-                <Button onClick={() => addMemo()}>記録</Button>
+                <Button onClick={() => addMemo()}>送信</Button>
             </footer>
 
 

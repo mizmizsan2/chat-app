@@ -17,22 +17,30 @@ const HomePage = ({ f7router }) => {
     const [inputName, setInputName] = React.useState("");
     const [inputPass, setInputPass] = React.useState("");
 
+    const [value, loading, error] = useCollection(collection(firestore, 'user-base'),
+        { snapshotListenOptions: { includeMetadataChanges: true } }
+    );
+
     const addAcc = async () => {   //メモの保存ボタンを押したときに実行
 
-        // if (inputName == '') {  //入力欄が空の時
-        //     alert('ユーザー名を入力してください！')
-        //     return;
-        // }
-        // if (inputPass == '') {  //パスワードが空の時
-        //     alert('パスワードを入力してください！')
-        //     return;
-        // }
+        let docs = [];
+        if (value) {
+            docs = value.docs.slice();
+            let num = docs.findIndex(e => e.data().user == inputName);
+            if (num >= 0) {
+                if (docs[num].data().password == inputPass) {
+                    alert('ログイン成功')
+                    f7router.navigate('/chatPage', {
+                        props: { myUserName: inputName }
+                    });
+                    return ;
+                }
+            }
+        }
 
-        f7router.navigate('/chatPage', {
-            props: { myUserName: inputName }
-        });
+        alert('ログインできませんでした');
 
-        console.log("Document written with ID: ", docRef.id);
+        // console.log("Document written with ID: ", docRef.id);
 
     }
 
