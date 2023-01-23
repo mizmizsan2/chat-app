@@ -73,7 +73,7 @@ const HomePage = ({ f7router }) => {
             />
             <Input
                 outline
-                type="text"
+                type="password"
                 placeholder="パスワード"
                 clearButton
                 value={inputPass}
